@@ -4,4 +4,12 @@
   flex-direction: column;
   align-items: center;
   width: 50vw;
+  background-color: lightgray;
+}
+
+.list-of-my-recipes {
+  list-style: none;
+  display: flex;
+  background-color: yellow;
+  width: 50vw;
 }

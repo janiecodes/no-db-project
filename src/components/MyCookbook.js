@@ -32,7 +32,7 @@ class MyCookbook extends Component {
     })
     return(
         <div>
-            <ul className="list-of-recipes">{cookbookArray}</ul>
+            <ul className="list-of-my-recipes">{cookbookArray}</ul>
         </div>
         )
     }

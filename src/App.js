@@ -48,7 +48,7 @@ class App extends Component {
 
   editRecipeName = (index, name) => {
     axios
-    .put(`/api/cookbook/${index}`, {name})
+    .put(`/api/cookbook/${index}`, name)
     .then((res) => {
       this.setState({myCookbook: res.data})
     })
