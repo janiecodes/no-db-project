@@ -1,15 +1,15 @@
 const express = require('express'),
-app = express(),
-port = 3012,
-ctrl = require('./controller.js');
+    app = express(),
+    port = 3012,
+    ctrl = require('./controller.js');
 
 //TOP LEVEL MIDDLEWARE
 app.use(express.json())
 
 //ENDPOINTS
 app.get('/api/recipe', ctrl.getRecipeList)
-app.get('/api/recipe/:id', ctrl.getRecipe); 
-//app.get('/api/cookbook', ctrl.getCookBook)
+app.get('/api/recipe/:id', ctrl.getOneRecipe); 
+app.get('/api/cookbook', ctrl.getMyCookBook)
 app.post('/api/cookbook/:id', ctrl.addRecipe);
 app.put('/api/cookbook/:index', ctrl.editRecipeName);
 app.delete('/api/cookbook/:index', ctrl.deleteRecipe);

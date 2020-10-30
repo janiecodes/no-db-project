@@ -1,26 +1,17 @@
 import React, {Component} from 'react'
 
+const Recipes = (props) => {
+    return(
+        <div>
+            <li className="recipes" onCliCk={() => {
+                    props.addRecipe(props.recipe.name)
+            }}>
+                <h1>{props.recipe.name}</h1>
 
-
-class Recipes extends Component{
-    constructor(props){
-        super()
-        this.state = {
-            
-          }
-    }
-
-
-    render(){
-        return(
-            <div>
-                <li className="recipe" onClick={() => {this.props.addToCookbook(this.props.recipe.id)}}>
-                    <h1>{this.props.recipe.name}</h1>
-                    <h2>{this.props.recipe.ingredient}</h2>
-                </li>
-            </div>
-        )
-    }
+            </li>
+        </div>
+    )
 }
+
 
 export default Recipes
