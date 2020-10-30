@@ -1,23 +1,23 @@
 import React, {Component} from 'react'
+import MyRecipes from './MyRecipes'
 
 
 
-class MyCookbook extends Component{
-    constructor(){
-        super()
-        this.state = {
-      
-          }
-    }
-
-
-    render(){
-        return(
-            <div>
-
-            </div>
+const MyCookbook = (props) => {
+    const recipeArray = props.myCookbook.map((recipe, index) => (
+        <MyRecipes
+        key={`${recipe.id}: ${index}`}
+        recipe={recipe}
+        deleteRecipe={props.deleteRecipe}
+        editRecipeName={props.editRecipeName}
+        index={index}
+    />
+    ))
+    return(
+        <div>
+            <ul className="list-of-recipes">{recipeArray}</ul>
+        </div>
         )
-    }
 
 }
 

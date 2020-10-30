@@ -1,9 +1,6 @@
-const axios = require('axios')
 const recipes = require('./recipes.json')
 
 let myCookbook = []
-
-
 
 module.exports = {
     //if no query, return all recipes
@@ -16,11 +13,13 @@ module.exports = {
             const filteredRecipes = recipes.filter((recipe) => 
                 recipe.name.toLowerCase().includes(search.toLowerCase())
             )
-            for(let i = 0; i < filteredRecipes.length; i++){
-                responseArray.push(filteredRecipes[i])
+            for(let i = 0; i < recipes.length; i++){
+                if(filteredRecipes[i]){
+                    responseArray.push(filteredRecipes[i])
+                }
             }
         }else{
-            for(let i = 0; i < filteredRecipes.length; i++){
+            for(let i = 0; i < recipes.length; i++){
                 responseArray.push(recipes[i]);
             }
         }

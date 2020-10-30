@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, {Component} from 'react'
-import Recipes from './components/Recipes'
+import Recipes from './Recipes'
 
 
 class RecipeList extends Component{
@@ -36,7 +36,7 @@ class RecipeList extends Component{
     render(){
         let mappedRecipe = []
         mappedRecipe = this.state.displayRecipe.map((recipe) => (
-        <Recipes key={recipe.id} recipe={recipe} addToCookbook={this.props.addRecipe}/>
+        <Recipes key={recipe.id} recipe={recipe} addRecipe={this.props.addRecipe}/>
         ))
         return(
             <div>
