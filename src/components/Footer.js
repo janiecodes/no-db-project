@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 function Footer (){
     return (
-        <footer>Get Cookin Good Lookin</footer>
+        <footer className="footer">Must be 21 years or older</footer>
     )
 }
 

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 function Header (){
     return (
-        <header>Create Your Own Cookbook</header>
+        <header className="header">Create Your List of Drinks</header>
     )
 }
 
