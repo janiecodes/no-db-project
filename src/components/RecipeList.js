@@ -18,4 +18,7 @@ class RecipeList extends Component{
             </div>
         )
     }
+
 }
+
+export default RecipeList

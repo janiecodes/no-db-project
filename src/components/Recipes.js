@@ -19,3 +19,5 @@ class Recipes extends Component{
         )
     }
 }
+
+export default Recipes

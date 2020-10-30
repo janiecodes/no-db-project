@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 
 
-class Cookbook extends Component{
+class MyCookbook extends Component{
     constructor(){
         super()
         this.state = {
@@ -20,3 +20,5 @@ class Cookbook extends Component{
     }
 
 }
+
+export default MyCookbook

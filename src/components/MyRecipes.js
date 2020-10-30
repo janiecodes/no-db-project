@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 
 
-class Finder extends Component{
+class MyRecipes extends Component{
     constructor(){
         super()
         this.state = {
@@ -12,11 +12,12 @@ class Finder extends Component{
 
 
     render(){
-        return(
+        return( 
             <div>
 
             </div>
         )
     }
-
 }
+
+export default MyRecipes
