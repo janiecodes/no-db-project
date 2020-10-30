@@ -28,11 +28,12 @@ class App extends Component {
   }
 
   addRecipe = (ingredient) => {
+    console.log(ingredient)
     axios
-      .get(`/api/cookbook/${ingredient}`)
+      .post(`/api/cookbooks/`, ingredient)
       .then(res => {
       this.setState({myCookbook: res.data})
-    })
+      })
       .catch((error) => console.log(error))
   }
 
@@ -62,11 +63,17 @@ class App extends Component {
         <Header/>
         <main className="main-box">
           <MyCookbook
+            myCookbook={this.state.myCookbook}
+            addRecipe={this.addRecipe}
+            deleteRecipe={this.deleteRecipe}
+            editRecipeName={this.editRecipeName}
+
+          />
+          <RecipeList
           myCookbook={this.state.myCookbook}
+          addRecipe={this.addRecipe}
           deleteRecipe={this.deleteRecipe}
           editRecipeName={this.editRecipeName}
-          />
-          <RecipeList addRecipe={this.addRecipe}
           />
         </main>
         <Footer/>

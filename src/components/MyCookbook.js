@@ -6,10 +6,6 @@ import axios from 'axios'
 class MyCookbook extends Component {
     constructor(){
         super()
-
-        this.state = {
-            displayMyCookbook: []
-        }
     }
 
     componentDidMount(){
@@ -17,22 +13,23 @@ class MyCookbook extends Component {
             .get('/api/cookbook')
             .then((res) => {
                 this.setState({
-                    displayMyCookbook: res.data
+                    myCookbook: res.data
             })
         })
     }
-    
+
     render(){
         let cookbookArray = []
-        cookbookArray = this.state.displayMyCookbook.map((recipe, index) => (
-            <MyRecipes
+        cookbookArray = this.props.myCookbook.map((recipe, index) => {
+            return <MyRecipes
                 key={`${recipe.ingredient}: ${index}`}
                 recipe={recipe}
                 deleteRecipe={this.props.deleteRecipe}
                 editRecipeName={this.props.editRecipeName}
+                addRecipe={this.props.addRecipe}
                 index={index}
             />
-        ))
+    })
     return(
         <div>
             <ul className="list-of-recipes">{cookbookArray}</ul>

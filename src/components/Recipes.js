@@ -2,10 +2,12 @@ import React, {Component} from 'react'
 
 const Recipes = (props) => {
     return(
-        <div>
-            <li className="recipes" onCliCk={() => {
-                    props.addRecipe(props.recipe.ingredient)
-            }}>
+        <div onClick={() => {
+            props.addRecipe(props.recipe)
+    }}>
+
+        {console.log(props.recipe)}
+            <li className="recipes">
                 <h1>{props.recipe.name}</h1>
         
 

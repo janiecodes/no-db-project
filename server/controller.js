@@ -34,14 +34,10 @@ module.exports = {
 
     //This method will take req.body.recipe object add an id to it and then push it to the cookbook array
     //it then increments the id variable to keep id's unique and then sends the cookbook array to the client side
-    addRecipe: (res, req) => {
-        const {ingredient} = req.params;
-        const foundRecipe = recipes.find((recipe) => recipe.ingredient === ingredient)
-
-        // foundRecipe.name = ""
-
-        myCookbook.push(foundRecipe)
-
+    addRecipe: (req, res) => {
+        const {body} = req
+        myCookbook.push(body)
+        console.log(myCookbook)
         res.status(200).send(myCookbook);
     },
 

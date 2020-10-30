@@ -42,6 +42,8 @@ class RecipeList extends Component{
             recipe={recipe} 
             addRecipe={this.props.addRecipe}/>
         ))
+
+        console.log(this.props)
         return(
             <div>
                 <input value={this.state.searchInput} onChange={this.handleInput}/>
