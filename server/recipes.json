@@ -1,25 +1,25 @@
 [
     {
         "id": 0,
-        "name": "Shot1",
+        "name": "Screwdriver",
         "ingredient": "Vodka"
     },
 
     {
         "id": 1,
-        "name": "Shot2",
+        "name": "Whiskey",
         "ingredient": "Whiskey"
     },
 
     {
         "id": 2,
-        "name": "Shot3",
+        "name": "Soju",
         "ingredient": "Soju"
     },
     
     {
         "id": 3,
-        "name": "Shot4",
+        "name": "Seltzer",
         "ingredient": "Seltzer"
     },
 

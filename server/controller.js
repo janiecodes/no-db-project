@@ -3,25 +3,16 @@ const recipes = require('./recipes.json')
 let myCookbook = []
 
 module.exports = {
-    //if no query, return all recipes
-    //if query, filter recipes based on search
     getRecipeList: (req, res) => {
-        const {search} = req.query
-        const {responseArray} = []
+         const {search} = req.query
+         let responseArray = []
 
         if(search){
-            const filteredRecipes = recipes.filter((recipe) => 
-                recipe.name.toLowerCase().includes(search.toLowerCase())
+            responseArray = recipes.filter((recipe) => 
+                recipe.ingredient.toLowerCase().includes(search.toLowerCase())
             )
-            for(let i = 0; i < recipes.length; i++){
-                if(filteredRecipes[i]){
-                    responseArray.push(filteredRecipes[i])
-                }
-            }
         }else{
-            for(let i = 0; i < recipes.length; i++){
-                responseArray.push(recipes[i]);
-            }
+            responseArray = [...recipes]
         }
         return res.status(200).send(responseArray)
     },
@@ -45,9 +36,9 @@ module.exports = {
     //it then increments the id variable to keep id's unique and then sends the cookbook array to the client side
     addRecipe: (res, req) => {
         const {id} = req.params;
-        const foundRecipe = {...recipes.find((recipe) => recipe.id === +id)}
+        const foundRecipe = recipes.find((recipe) => recipe.id === +id)
 
-        foundRecipe.name = ""
+        // foundRecipe.name = ""
 
         myCookbook.push(foundRecipe)
 
