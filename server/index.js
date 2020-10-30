@@ -7,11 +7,11 @@ ctrl = require('./controller.js');
 app.use(express.json())
 
 //ENDPOINTS
-app.get(XXXX, ctrl.getRecipeList)
-app.get(XXXX/:id, ctrl.getRecipe);
-app.get(XXXX)
-app.post(XXXX/:id, ctrl.addRecipe);
-app.put(XXXX/:id, ctrl.editRecipeName);
-app.delete(XXXX/:id, ctrl.deleteRecipe)
+app.get('/api/recipe', ctrl.getRecipeList)
+app.get('/api/recipe/:id', ctrl.getRecipe); 
+//app.get('/api/cookbook', ctrl.getCookBook)
+app.post('/api/cookbook/:id', ctrl.addRecipe);
+app.put('/api/cookbook/:index', ctrl.editRecipeName);
+app.delete('/api/cookbook/:index', ctrl.deleteRecipe);
 
 app.listen(port, () => console.log(`Server is listening on ${port}`))

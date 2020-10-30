@@ -51,15 +51,27 @@ module.exports = {
         res.status(200).send(myCookbook);
     },
 
+
+   
+
     //This method takes in an id parameter to find the item to be updated with findIndex. 
     //Once the index is found, access the object using bracket notation and re-assign
 
     editRecipeName: (req, res) => {
+        const {index} = req.params
+        const {nickname} = req.body
 
+        myCookbook[index].nickname = nickname;
+
+        res.status(200).send(myCookbook)
     },
 
     deleteRecipe: (req, res) => {
+        const {index} =re.params
 
+        myCookbook.splice(index,1)
+
+        res.status(200).send(myCookbook)
     }
 
 

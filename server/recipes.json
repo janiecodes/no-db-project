@@ -1,0 +1,31 @@
+[
+    {
+        "id": 0,
+        "name": "Shot1",
+        "ingredient": "Vodka"
+    },
+
+    {
+        "id": 1,
+        "name": "Shot2",
+        "ingredient": "Whiskey"
+    },
+
+    {
+        "id": 2,
+        "name": "Shot3",
+        "ingredient": "Soju"
+    },
+    
+    {
+        "id": 3,
+        "name": "Shot4",
+        "ingredient": "Seltzer"
+    },
+
+    {
+        "id": 4,
+        "name": "Shot5",
+        "ingredient": "Tequila"
+    }
+]
