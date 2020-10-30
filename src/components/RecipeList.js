@@ -4,8 +4,8 @@ import Recipes from './Recipes'
 
 
 class RecipeList extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             searchInput: '',
             displayRecipe: []
@@ -36,7 +36,10 @@ class RecipeList extends Component{
     render(){
         let mappedRecipe = []
         mappedRecipe = this.state.displayRecipe.map((recipe) => (
-        <Recipes key={recipe.id} recipe={recipe} addRecipe={this.props.addRecipe}/>
+        <Recipes 
+            key={recipe.id} 
+            recipe={recipe} 
+            addRecipe={this.props.addRecipe}/>
         ))
         return(
             <div>

@@ -4,7 +4,7 @@ const Recipes = (props) => {
     return(
         <div>
             <li className="recipes" onCliCk={() => {
-                    props.addRecipe(props.recipe.name)
+                    props.addRecipe(props.recipe.id)
             }}>
                 <h1>{props.recipe.name}</h1>
 

@@ -13,7 +13,6 @@ class App extends Component {
     this.state = {
       myCookbook: []
     }
-    this.addRecipe = this.addRecipe.bind(this)
   }
 
   componentDidMount(){
@@ -22,14 +21,14 @@ class App extends Component {
     axios
     .get('/api/cookbook')
     .then((res) => {
-      this.setState({team: res.data})
+      this.setState({myCookbook: res.data})
     })
     .catch((error) => {
       console.log(error)
     })
   }
 
-  addRecipe(id){
+  addRecipe = (id) => {
     axios
       .get(`/api/cookbook/${id}`)
       .then(res => {
@@ -42,7 +41,7 @@ class App extends Component {
     axios
       .delete(`/api/cookbook/${index}`)
       .then((res) => {
-      this.setState({team: res.data})
+      this.setState({myCookbook: res.data})
      })
       .catch((error) => console.log(error))
   }
@@ -51,7 +50,7 @@ class App extends Component {
     axios
     .put(`/api/cookbook/${index}`, {name})
     .then((res) => {
-      this.setState({team: res.data})
+      this.setState({myCookbook: res.data})
     })
     .catch((error) => {
       console.log(error)
@@ -66,8 +65,10 @@ class App extends Component {
           <MyCookbook
           myCookbook={this.state.myCookbook}
           deleteRecipe={this.deleteRecipe}
-          editRecipeName={this.editRecipeName}/>
-          <RecipeList addRecipe={this.addRecipe}/>
+          editRecipeName={this.editRecipeName}
+          />
+          <RecipeList addRecipe={this.addRecipe}
+          />
         </main>
         <Footer/>
       </div>

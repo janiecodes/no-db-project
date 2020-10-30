@@ -45,9 +45,7 @@ module.exports = {
     //it then increments the id variable to keep id's unique and then sends the cookbook array to the client side
     addRecipe: (res, req) => {
         const {id} = req.params;
-        const foundRecipe = {...recipes.find((recipe) => {
-            recipe.id === +id
-        })}
+        const foundRecipe = {...recipes.find((recipe) => recipe.id === +id)}
 
         foundRecipe.name = ""
 
@@ -61,7 +59,7 @@ module.exports = {
 
     editRecipeName: (req, res) => {
         const {index} = req.params
-        const {nickname} = req.body
+        const {name} = req.body
 
         myCookbook[index].name = name;
 
