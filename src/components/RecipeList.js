@@ -45,7 +45,7 @@ class RecipeList extends Component{
         return(
             <div>
                 <input value={this.state.searchInput} onChange={this.handleInput}/>
-                <button onClick={this.handleInput}>Search</button>
+                {/* <button onClick={this.handleInput}>Search</button> */}
                 <ul className='list'>{mappedRecipe}</ul>
             </div>
         )

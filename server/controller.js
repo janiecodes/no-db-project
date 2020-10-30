@@ -4,8 +4,8 @@ let myCookbook = []
 
 module.exports = {
     getRecipeList: (req, res) => {
-         const {search} = req.query
-         let responseArray = []
+        const {search} = req.query
+        let responseArray = []
 
         if(search){
             responseArray = recipes.filter((recipe) => 
@@ -18,15 +18,15 @@ module.exports = {
     },
      
     //This method will send the cookbook array to the client side
-    getOneRecipe: (req, res) => {
-        const {id} = req.params
-        const foundRecipe = recipes.find((recipe) => recipe.id === +id)
+    // getOneRecipe: (req, res) => {
+    //     const {ingredient} = req.params
+    //     const foundRecipe = recipes.find((recipe) => recipe.ingredient === ingredient)
 
-        if(!foundRecipe){
-            res.status(400).send("Recipe not found")
-        }
-        res.status(200).send(foundRecipe)
-    },
+    //     if(!foundRecipe){
+    //         res.status(400).send("Recipe not found")
+    //     }
+    //     res.status(200).send(foundRecipe)
+    // },
     
     getMyCookbook: (req, res) => {
         res.status(200).send(myCookbook)
@@ -35,8 +35,8 @@ module.exports = {
     //This method will take req.body.recipe object add an id to it and then push it to the cookbook array
     //it then increments the id variable to keep id's unique and then sends the cookbook array to the client side
     addRecipe: (res, req) => {
-        const {id} = req.params;
-        const foundRecipe = recipes.find((recipe) => recipe.id === +id)
+        const {ingredient} = req.params;
+        const foundRecipe = recipes.find((recipe) => recipe.ingredient === ingredient)
 
         // foundRecipe.name = ""
 

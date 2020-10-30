@@ -10,14 +10,13 @@ import MyCookbook from './components/MyCookbook'
 class App extends Component {
   constructor(){
     super()
+
     this.state = {
       myCookbook: []
     }
   }
 
   componentDidMount(){
-    //lifecycle method - this will fire after the first invocation of render in the component. 
-    //This is a great method for retrieving data from a server that you need in your component right away.
     axios
     .get('/api/cookbook')
     .then((res) => {
@@ -28,9 +27,9 @@ class App extends Component {
     })
   }
 
-  addRecipe = (id) => {
+  addRecipe = (ingredient) => {
     axios
-      .get(`/api/cookbook/${id}`)
+      .get(`/api/cookbook/${ingredient}`)
       .then(res => {
       this.setState({myCookbook: res.data})
     })
