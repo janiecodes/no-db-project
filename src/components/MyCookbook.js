@@ -4,8 +4,8 @@ import MyRecipes from './MyRecipes'
 import axios from 'axios'
 
 class MyCookbook extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
     }
 
     componentDidMount(){

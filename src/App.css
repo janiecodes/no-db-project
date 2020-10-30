@@ -1,3 +1,8 @@
+.header {
+  font-weight: bold;
+
+}
+
 .list {
   list-style: none;
   display: flex; 
@@ -12,4 +17,8 @@
   display: flex;
   background-color: yellow;
   width: 50vw;
+}
+
+.footer {
+  font-weight: bold;
 }

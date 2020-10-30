@@ -2,8 +2,11 @@ const recipes = require('./recipes.json')
 
 let myCookbook = []
 
+//console.log(recipes[0].name) = VODKA SHOT
+
 module.exports = {
     getRecipeList: (req, res) => {
+        res.status(200).send([...recipes])
         const {search} = req.query
         let responseArray = []
 
@@ -37,7 +40,6 @@ module.exports = {
     addRecipe: (req, res) => {
         const {body} = req
         myCookbook.push(body)
-        console.log(myCookbook)
         res.status(200).send(myCookbook);
     },
 
@@ -49,7 +51,7 @@ module.exports = {
         const {name} = req.body
 
         myCookbook[index].name = name;
-
+        console.log(myCookbook[index])
         res.status(200).send(myCookbook)
     },
 

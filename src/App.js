@@ -30,7 +30,7 @@ class App extends Component {
   addRecipe = (ingredient) => {
     console.log(ingredient)
     axios
-      .post(`/api/cookbooks/`, ingredient)
+      .post(`/api/cookbook/`, ingredient)
       .then(res => {
       this.setState({myCookbook: res.data})
       })
@@ -47,8 +47,10 @@ class App extends Component {
   }
 
   editRecipeName = (index, name) => {
+    console.log(index)
+    console.log(name)
     axios
-    .put(`/api/cookbook/${index}`, name)
+    .put(`/api/cookbook/${index}`, {name})
     .then((res) => {
       this.setState({myCookbook: res.data})
     })
