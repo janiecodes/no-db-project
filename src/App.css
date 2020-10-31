@@ -13,17 +13,20 @@
   flex-direction: column;
   align-items: center;
   width: 50vw;
-  background-color: lightgray;
 }
 
 .list-of-my-recipes {
   list-style: none;
   display: flex;
   flex-direction: column;
-  background-color: yellow;
   width: 50vw;
 }
 
 .footer {
   font-weight: bold;
+}  
+
+img {
+  width: 200px;
+  height:200px;
 }

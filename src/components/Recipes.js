@@ -6,7 +6,7 @@ const Recipes = (props) => {
             props.addRecipe(props.recipe)
     }}>
             <li className="recipes">
-                <h1>{props.recipe.ingredient}</h1>
+                <img src={props.recipe.picture}/>
         
 
             </li>
