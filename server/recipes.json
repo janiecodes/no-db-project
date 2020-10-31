@@ -25,7 +25,19 @@
 
     {
         "id": 4,
-        "name": "Tequila Shot",
+        "name": "Tequila Sunrise",
         "ingredient": "Tequila"
+    },  
+
+    {
+        "id": 5,
+        "name": "Gin Fizz",
+        "ingredient": "Gin"
+    },
+
+    {
+        "id": 6,
+        "name": "Old Fashioned",
+        "ingredient": "Bourbon"
     }
 ]

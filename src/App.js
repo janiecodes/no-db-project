@@ -64,18 +64,18 @@ class App extends Component {
       <div>
         <Header/>
         <main className="main-box">
+          <RecipeList
+          // myCookbook={this.state.myCookbook}
+          addRecipe={this.addRecipe}
+          // deleteRecipe={this.deleteRecipe}
+          // editRecipeName={this.editRecipeName}
+          />
+
           <MyCookbook
             myCookbook={this.state.myCookbook}
-            addRecipe={this.addRecipe}
             deleteRecipe={this.deleteRecipe}
             editRecipeName={this.editRecipeName}
 
-          />
-          <RecipeList
-          myCookbook={this.state.myCookbook}
-          addRecipe={this.addRecipe}
-          deleteRecipe={this.deleteRecipe}
-          editRecipeName={this.editRecipeName}
           />
         </main>
         <Footer/>

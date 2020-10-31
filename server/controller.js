@@ -51,7 +51,7 @@ module.exports = {
         const {name} = req.body
 
         myCookbook[index].name = name;
-        console.log(myCookbook[index])
+        // console.log(myCookbook[index])
         res.status(200).send(myCookbook)
     },
 

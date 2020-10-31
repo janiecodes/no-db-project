@@ -38,7 +38,7 @@ class RecipeList extends Component{
         let mappedRecipe = []
         mappedRecipe = this.state.displayRecipe.map((recipe) => (
         <Recipes 
-            key={recipe.ingredient} 
+            key={recipe.id} 
             recipe={recipe} 
             addRecipe={this.props.addRecipe}/>
         ))
@@ -46,8 +46,8 @@ class RecipeList extends Component{
         console.log(this.props)
         return(
             <div>
-                <input value={this.state.searchInput} onChange={this.handleInput}/>
-                <button onClick={this.handleInput}>Search</button>
+                {/* <input value={this.state.searchInput} onChange={this.handleInput}/>
+                <button onClick={this.handleInput}>Search</button> */}
                 <ul className='list'>{mappedRecipe}</ul>
             </div>
         )

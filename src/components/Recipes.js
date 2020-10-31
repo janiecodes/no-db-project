@@ -5,10 +5,8 @@ const Recipes = (props) => {
         <div onClick={() => {
             props.addRecipe(props.recipe)
     }}>
-
-        {console.log(props.recipe)}
             <li className="recipes">
-                <h1>{props.recipe.name}</h1>
+                <h1>{props.recipe.ingredient}</h1>
         
 
             </li>

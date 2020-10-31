@@ -20,23 +20,19 @@ class MyRecipes extends Component {
   };
 
   render() {
+    const {deleteRecipe, editRecipeName} = this.props
     return (
-      <div
-        onClick={() => {
-          this.props.addRecipe(this.props.recipe);
-        }}
-      >
-        <p
+      <div>
+        <li className="my-recipe">
+          <p
           className="x-button"
           onClick={(e) => {
             e.stopPropagation();
-            this.props.deleteRecipe(this.props.index);
+            deleteRecipe(this.props.index);
           }}
         >
           {" X "}
-        </p>
-        
-        <li className="my-recipe">
+          </p>
           <h1>{this.props.recipe.name}</h1>
           {this.state.toggleEdit ? (
             <input
@@ -44,14 +40,16 @@ class MyRecipes extends Component {
               onChange={this.handleChange}
             />
           ) : (
-            <h2>New Name: {this.props.recipe.name}</h2>
+            
+            null
+            // <h2>{this.state.editedName}</h2> 
           )}
 
           {this.state.toggleEdit ? (
             <div>
               <button
                 onClick={() => {
-                  this.props.editRecipeName(
+                  editRecipeName(
                     this.props.index,
                     this.state.editedName
                   );
@@ -70,10 +68,6 @@ class MyRecipes extends Component {
               onClick={this.toggleEdit}
               >Edit</button>
         </li>
-        <div onDoubleClick={() => {
-          this.props.deleteRecipe(this.props.recipe);
-        }}
-        ></div>
       </div>
     );
   }
