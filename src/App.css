@@ -1,29 +1,35 @@
 .header {
   font-weight: bold;
+  width: 100vw;
+}
 
+.header img{
+  height: 70vh;
+  width: 100vw;
 }
 
 .main-box {
-  display: flex;
+  display: block;
 }
 
 .list {
   list-style: none;
   display: flex; 
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 50vw;
+
 }
 
 .list-of-my-recipes {
+  color: black;
   list-style: none;
   display: flex;
-  flex-direction: column;
-  width: 50vw;
+  flex-direction: row;
 }
 
 .footer {
   font-weight: bold;
+  text-align: center;
 }  
 
 img {
