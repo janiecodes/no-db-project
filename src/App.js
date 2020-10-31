@@ -39,7 +39,7 @@ class App extends Component {
 
   deleteDrink = (index) => {
     axios
-      .delete(`/api/cdrinks/${index}`)
+      .delete(`/api/drinks/${index}`)
       .then((res) => {
       this.setState({myDrinkList: res.data})
      })
