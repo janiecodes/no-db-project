@@ -1,24 +1,24 @@
 import React, {Component} from 'react'
-import Recipes from './Recipes'
+import Drinks from './Drinks'
 
 import axios from 'axios'
 
-class RecipeList extends Component{
+class DrinkList extends Component{
     constructor(props){
         super(props)
         
         this.state = {
             searchInput: '',
-            displayRecipe: []
+            displayDrink: []
         }
     }
 
     componentDidMount(){
         axios
-            .get('/api/recipe')
+            .get('/api/amongus')
             .then((res) => {
                 this.setState({
-                    displayRecipe: res.data
+                    displayDrink: res.data
             })
         })
     }
@@ -26,21 +26,21 @@ class RecipeList extends Component{
     handleInput = (e) => {
         this.setState({searchInput: e.target.value})
         axios
-            .get(`/api/recipe?search=${e.target.value}`)
+            .get(`/api/amongus?search=${e.target.value}`)
             .then((res) => {
-                this.setState({displayRecipe:res.data})
+                this.setState({displayDrink:res.data})
             })
             .catch((error) => console.log(error))
     }
 
 
     render(){
-        let mappedRecipe = []
-        mappedRecipe = this.state.displayRecipe.map((recipe) => (
-        <Recipes 
-            key={recipe.id} 
-            recipe={recipe} 
-            addRecipe={this.props.addRecipe}/>
+        let mappedDrink = []
+        mappedDrink = this.state.displayDrink.map((drink) => (
+        <Drinks 
+            key={drink.id} 
+            drink={drink} 
+            addDrink={this.props.addDrink}/>
         ))
 
         console.log(this.props)
@@ -48,11 +48,11 @@ class RecipeList extends Component{
             <div>
                 {/* <input value={this.state.searchInput} onChange={this.handleInput}/>
                 <button onClick={this.handleInput}>Search</button> */}
-                <ul className='list'>{mappedRecipe}</ul>
+                <ul className='list'>{mappedDrink}</ul>
             </div>
         )
     }
 
 }
 
-export default RecipeList
+export default DrinkList

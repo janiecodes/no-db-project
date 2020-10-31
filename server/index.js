@@ -7,11 +7,11 @@ const express = require('express'),
 app.use(express.json())
 
 //ENDPOINTS
-app.get('/api/recipe', ctrl.getRecipeList)
+app.get('/api/amongus', ctrl.getList)
 // app.get('/api/recipe/:ingredient', ctrl.getOneRecipe); 
-app.get('/api/cookbook', ctrl.getMyCookbook)
-app.post('/api/cookbook', ctrl.addRecipe);
-app.put('/api/cookbook/:index', ctrl.editRecipeName);
-app.delete('/api/cookbook/:index', ctrl.deleteRecipe);
+app.get('/api/drinks', ctrl.getMyDrink)
+app.post('/api/drinks', ctrl.addDrink);
+app.put('/api/drinks/:index', ctrl.editDrinkName);
+app.delete('/api/drinks/:index', ctrl.deleteDrink);
 
 app.listen(port, () => console.log(`Server is listening on ${port}`))

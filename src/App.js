@@ -3,8 +3,8 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import axios from 'axios'
 import './App.css';
-import RecipeList from './components/RecipeList'
-import MyCookbook from './components/MyCookbook'
+import DrinkList from './components/DrinkList'
+import MyDrinkList from './components/MyDrinkList'
 
 
 class App extends Component {
@@ -12,47 +12,47 @@ class App extends Component {
     super()
 
     this.state = {
-      myCookbook: []
+      myDrinkList: []
     }
   }
 
   componentDidMount(){
     axios
-    .get('/api/cookbook')
+    .get('/api/drinks')
     .then((res) => {
-      this.setState({myCookbook: res.data})
+      this.setState({myDrinkList: res.data})
     })
     .catch((error) => {
       console.log(error)
     })
   }
 
-  addRecipe = (ingredient) => {
+  addDrink = (ingredient) => {
     console.log(ingredient)
     axios
-      .post(`/api/cookbook/`, ingredient)
+      .post(`/api/drinks/`, ingredient)
       .then(res => {
-      this.setState({myCookbook: res.data})
+      this.setState({myDrinkList: res.data})
       })
       .catch((error) => console.log(error))
   }
 
-  deleteRecipe = (index) => {
+  deleteDrink = (index) => {
     axios
-      .delete(`/api/cookbook/${index}`)
+      .delete(`/api/cdrinks/${index}`)
       .then((res) => {
-      this.setState({myCookbook: res.data})
+      this.setState({myDrinkList: res.data})
      })
       .catch((error) => console.log(error))
   }
 
-  editRecipeName = (index, name) => {
+  editDrinkName = (index, name) => {
     console.log(index)
     console.log(name)
     axios
-    .put(`/api/cookbook/${index}`, {name})
+    .put(`/api/drinks/${index}`, {name})
     .then((res) => {
-      this.setState({myCookbook: res.data})
+      this.setState({myDrinkList: res.data})
     })
     .catch((error) => {
       console.log(error)
@@ -64,17 +64,17 @@ class App extends Component {
       <div>
         <Header/>
         <main className="main-box">
-          <RecipeList
+          <DrinkList
           // myCookbook={this.state.myCookbook}
-          addRecipe={this.addRecipe}
+          addDrink={this.addDrink}
           // deleteRecipe={this.deleteRecipe}
           // editRecipeName={this.editRecipeName}
           />
 
-          <MyCookbook
-            myCookbook={this.state.myCookbook}
-            deleteRecipe={this.deleteRecipe}
-            editRecipeName={this.editRecipeName}
+          <MyDrinkList
+            myDrinkList={this.state.myDrinkList}
+            deleteDrink={this.deleteDrink}
+            editDrinkName={this.editDrinkName}
 
           />
         </main>

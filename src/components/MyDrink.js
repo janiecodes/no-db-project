@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class MyRecipes extends Component {
+class MyDrink extends Component {
   constructor(props) {
     super(props);
 
@@ -20,20 +20,20 @@ class MyRecipes extends Component {
   };
 
   render() {
-    const {deleteRecipe, editRecipeName} = this.props
+    const {deleteDrink, editDrinkName} = this.props
     return (
       <div>
-        <li className="my-recipe">
+        <li className="my-drink">
           <p
           className="x-button"
           onClick={(e) => {
             e.stopPropagation();
-            deleteRecipe(this.props.index);
+            deleteDrink(this.props.index);
           }}
         >
           {" X "}
           </p>
-          <h1>{this.props.recipe.name}</h1>
+          <h1>{this.props.drink.name}</h1>
           {this.state.toggleEdit ? (
             <input
               value={this.state.editedName}
@@ -49,7 +49,7 @@ class MyRecipes extends Component {
             <div>
               <button
                 onClick={() => {
-                  editRecipeName(
+                  editDrinkName(
                     this.props.index,
                     this.state.editedName
                   );
@@ -58,7 +58,7 @@ class MyRecipes extends Component {
               >Save</button>
               <button
                 onClick={() => {
-                  this.setState({editedName: this.props.recipe.name})
+                  this.setState({editedName: this.props.drink.name})
                   this.toggleEdit();
                 }}
               >Cancel</button>
@@ -73,4 +73,4 @@ class MyRecipes extends Component {
   }
 }
 
-export default MyRecipes;
+export default MyDrink;

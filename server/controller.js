@@ -1,21 +1,21 @@
-const recipes = require('./recipes.json')
+const drinks = require('./drinks.json')
 
-let myCookbook = []
+let myDrink = []
 
 //console.log(recipes[0].name) = VODKA SHOT
 
 module.exports = {
-    getRecipeList: (req, res) => {
-        res.status(200).send([...recipes])
+    getList: (req, res) => {
+        res.status(200).send([...drinks])
         const {search} = req.query
         let responseArray = []
 
         if(search){
-            responseArray = recipes.filter((recipe) => 
-                recipe.ingredient.toLowerCase().includes(search.toLowerCase())
+            responseArray = drinks.filter((drink) => 
+                drink.ingredient.toLowerCase().includes(search.toLowerCase())
             )
         }else{
-            responseArray = [...recipes]
+            responseArray = [...drinks]
         }
         return res.status(200).send(responseArray)
     },
@@ -31,36 +31,36 @@ module.exports = {
     //     res.status(200).send(foundRecipe)
     // },
     
-    getMyCookbook: (req, res) => {
-        res.status(200).send(myCookbook)
+    getMyDrink: (req, res) => {
+        res.status(200).send(myDrink)
     },
 
     //This method will take req.body.recipe object add an id to it and then push it to the cookbook array
     //it then increments the id variable to keep id's unique and then sends the cookbook array to the client side
-    addRecipe: (req, res) => {
+    addDrink: (req, res) => {
         const {body} = req
-        myCookbook.push(body)
-        res.status(200).send(myCookbook);
+        myDrink.push(body)
+        res.status(200).send(myDrink);
     },
 
     //This method takes in an id parameter to find the item to be updated with findIndex. 
     //Once the index is found, access the object using bracket notation and re-assign
 
-    editRecipeName: (req, res) => {
+    editDrinkName: (req, res) => {
         const {index} = req.params
         const {name} = req.body
 
-        myCookbook[index].name = name;
+        myDrink[index].name = name;
         // console.log(myCookbook[index])
-        res.status(200).send(myCookbook)
+        res.status(200).send(myDrink)
     },
 
-    deleteRecipe: (req, res) => {
+    deleteDrink: (req, res) => {
         const {index} = req.params
 
-        myCookbook.splice(index,1)
+        myDrink.splice(index,1)
 
-        res.status(200).send(myCookbook)
+        res.status(200).send(myDrink)
     }
 
 }
