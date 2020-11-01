@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 .header {
   font-weight: bold;
   width: 100vw;
@@ -35,4 +37,14 @@
 img {
   width: 200px;
   height:200px;
+}
+
+.my-drink {
+  width: 200px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+}
+
+.x-button{
+  height: 30px;
 }

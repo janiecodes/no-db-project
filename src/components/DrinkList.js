@@ -17,22 +17,20 @@ class DrinkList extends Component{
         axios
             .get('/api/drinks')
             .then((res) => {
-                this.setState({
-                    displayDrink: res.data
+                this.setState({displayDrink: res.data})
             })
-        })
+            .catch((error) => console.log(error))
     }
 
     handleInput = (e) => {
         this.setState({searchInput: e.target.value})
         axios
-            .get(`/api/amongus?search=${e.target.value}`)
+            .get(`/api/drinks?search=${e.target.value}`)
             .then((res) => {
                 this.setState({displayDrink:res.data})
             })
             .catch((error) => console.log(error))
     }
-
 
     render(){
         let mappedDrink = []
@@ -43,14 +41,12 @@ class DrinkList extends Component{
             addDrink={this.props.addDrink}/>
         ))
 
-        console.log(this.props)
         return(
             <div>
                 <ul className='list'>{mappedDrink}</ul>
             </div>
         )
     }
-
 }
 
 export default DrinkList

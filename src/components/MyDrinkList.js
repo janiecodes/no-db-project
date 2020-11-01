@@ -20,13 +20,14 @@ class MyDrinkList extends Component {
 
     render(){
         let drinkArray = []
-        drinkArray = this.props.myDrinkList.map((drink, index) => {
+        const {myDrinkList, deleteDrink, editDrinkName, addDrink} = this.props
+        drinkArray = myDrinkList.map((drink, index) => {
             return <MyDrink
                 key={`${drink.ingredient}: ${index}`}
                 drink={drink}
-                deleteDrink={this.props.deleteDrink}
-                editDrinkName={this.props.editDrinkName}
-                addDrink={this.props.addDrink}
+                deleteDrink={deleteDrink}
+                editDrinkName={editDrinkName}
+                addDrink={addDrink}
                 index={index}
             />
     })
