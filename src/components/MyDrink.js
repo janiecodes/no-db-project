@@ -42,7 +42,7 @@ class MyDrink extends Component {
           ) : (
             
             null
-            // <h2>{this.state.editedName}</h2> 
+
           )}
 
           {this.state.toggleEdit ? (

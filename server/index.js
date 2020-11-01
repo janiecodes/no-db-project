@@ -7,8 +7,7 @@ const express = require('express'),
 app.use(express.json())
 
 //ENDPOINTS
-app.get('/api/amongus', ctrl.getList)
-// app.get('/api/recipe/:ingredient', ctrl.getOneRecipe); 
+app.get('/api/drinks', ctrl.getList)
 app.get('/api/drinks', ctrl.getMyDrink)
 app.post('/api/drinks', ctrl.addDrink);
 app.put('/api/drinks/:index', ctrl.editDrinkName);

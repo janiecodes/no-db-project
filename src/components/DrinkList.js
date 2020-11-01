@@ -15,7 +15,7 @@ class DrinkList extends Component{
 
     componentDidMount(){
         axios
-            .get('/api/amongus')
+            .get('/api/drinks')
             .then((res) => {
                 this.setState({
                     displayDrink: res.data
@@ -46,8 +46,6 @@ class DrinkList extends Component{
         console.log(this.props)
         return(
             <div>
-                {/* <input value={this.state.searchInput} onChange={this.handleInput}/>
-                <button onClick={this.handleInput}>Search</button> */}
                 <ul className='list'>{mappedDrink}</ul>
             </div>
         )

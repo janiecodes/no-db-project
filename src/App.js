@@ -65,10 +65,7 @@ class App extends Component {
         <Header/>
         <main className="main-box">
           <DrinkList
-          // myCookbook={this.state.myCookbook}
           addDrink={this.addDrink}
-          // deleteRecipe={this.deleteRecipe}
-          // editRecipeName={this.editRecipeName}
           />
 
           <MyDrinkList
