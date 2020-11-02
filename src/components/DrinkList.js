@@ -22,15 +22,15 @@ class DrinkList extends Component{
             .catch((error) => console.log(error))
     }
 
-    handleInput = (e) => {
-        this.setState({searchInput: e.target.value})
-        axios
-            .get(`/api/drinks?search=${e.target.value}`)
-            .then((res) => {
-                this.setState({displayDrink:res.data})
-            })
-            .catch((error) => console.log(error))
-    }
+    // handleInput = (e) => {
+    //     this.setState({searchInput: e.target.value})
+    //     axios
+    //         .get(`/api/drinks?search=${e.target.value}`)
+    //         .then((res) => {
+    //             this.setState({displayDrink:res.data})
+    //         })
+    //         .catch((error) => console.log(error))
+    // }
 
     render(){
         let mappedDrink = []

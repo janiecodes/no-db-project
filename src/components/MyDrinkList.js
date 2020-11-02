@@ -14,8 +14,9 @@ class MyDrinkList extends Component {
             .then((res) => {
                 this.setState({
                     myDrink: res.data
+                })
             })
-        })
+            .catch((error) => console.log(error))
     }
 
     render(){
