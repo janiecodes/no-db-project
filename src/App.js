@@ -18,7 +18,7 @@ class App extends Component {
 
   componentDidMount(){
     axios
-    .get('/api/drinks')
+    .get('/api/drink')
     .then((res) => {
       this.setState({myDrinkList: res.data})
     })
